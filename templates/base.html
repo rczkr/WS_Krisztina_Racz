@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="de" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Krisztina Racz | Portfolio & Bewerbung{% endblock %}</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind & Cyber-Girlie Theme Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            cyan: '#00f2fe',
+                            violet: '#9d4edd',
+                            pink: '#f72585',
+                            dark: '#06060c',
+                            card: '#121225',
+                            border: 'rgba(255, 255, 255, 0.1)'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    },
+                    animation: {
+                        'pulse-glow': 'pulseGlow 3s infinite alternate',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        pulseGlow: {
+                            '0%': { boxShadow: '0 0 15px rgba(0, 242, 254, 0.2)' },
+                            '100%': { boxShadow: '0 0 35px rgba(247, 37, 133, 0.5)' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Cyberpunk Styles -->
+    <style>
+        body {
+            background-color: #06060c;
+            color: #e2e8f0;
+            background-image:
+                radial-gradient(circle at 15% 20%, rgba(0, 242, 254, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 60%, rgba(247, 37, 133, 0.1) 0%, transparent 45%);
+            background-attachment: fixed;
+        }
+        .glass-card {
+            background: rgba(18, 18, 37, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        .glass-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card-hover:hover {
+            transform: translateY(-4px);
+            border-color: rgba(247, 37, 133, 0.5);
+            box-shadow: 0 12px 40px -10px rgba(247, 37, 133, 0.3);
+        }
+        .glow-text-pink {
+            text-shadow: 0 0 12px rgba(247, 37, 133, 0.7);
+        }
+        .glow-text-cyan {
+            text-shadow: 0 0 12px rgba(0, 242, 254, 0.7);
+        }
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            width: 2px;
+            background: linear-gradient(180deg, #00f2fe 0%, #f72585 100%);
+        }
+        @media (min-width: 768px) {
+            .timeline-line::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #06060c; }
+        ::-webkit-scrollbar-thumb { background: #1e1e38; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #f72585; }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-brand-pink selection:text-white">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass-card border-b border-brand-border/50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="{{ url_for('home') }}" class="font-mono text-xl font-bold tracking-wider text-white flex items-center gap-2">
+                <span class="text-brand-cyan">&lt;</span>KR<span class="text-brand-pink">/&gt;</span>
+                <span class="text-xs px-2 py-0.5 rounded bg-brand-pink/20 text-brand-pink border border-brand-pink/30">DEV</span>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="{{ url_for('home') }}" class="hover:text-brand-pink transition-colors">Über Mich</a>
+                <a href="{{ url_for('kopf_fit') }}" class="hover:text-brand-cyan transition-colors">Projekt: KopfFit</a>
+                <a href="{{ url_for('projekt_zwei') }}" class="hover:text-brand-violet transition-colors">JumpNova</a>
+                <a href="{{ url_for('warum_ihr') }}" class="text-brand-pink border border-brand-pink/40 px-3 py-1 rounded-full bg-brand-pink/10 hover:bg-brand-pink hover:text-white transition-all">Warum Ihr Team?</a>
+            </div>
+
+            <!-- Download CV Button -->
+            <a href="{{ url_for('download_cv') }}" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded-lg bg-gradient-to-r from-brand-pink to-brand-cyan text-black font-bold hover:shadow-[0_0_20px_rgba(247,37,133,0.6)] transition-all">
+                <i class="fa-solid fa-file-arrow-down"></i> Lebenslauf PDF
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white text-xl">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden pt-4 pb-2 border-t border-brand-border/30 mt-3 flex flex-col gap-3 text-sm">
+            <a href="{{ url_for('home') }}" class="mobile-link px-2 py-1 hover:text-brand-pink">Über Mich</a>
+            <a href="{{ url_for('kopf_fit') }}" class="mobile-link px-2 py-1 hover:text-brand-cyan">Projekt: KopfFit</a>
+            <a href="{{ url_for('projekt_zwei') }}" class="mobile-link px-2 py-1 hover:text-brand-violet">JumpNova</a>
+            <a href="{{ url_for('warum_ihr') }}" class="mobile-link px-2 py-1 text-brand-pink">Warum Ihr Team?</a>
+            <a href="{{ url_for('download_cv') }}" class="mobile-link px-2 py-1 text-brand-cyan font-bold"><i class="fa-solid fa-file-arrow-down mr-1"></i> Lebenslauf PDF Herunterladen</a>
+        </div>
+    </nav>
+
+    <!-- Main Dynamic Content -->
+    <main class="min-h-screen pt-20">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 text-center border-t border-brand-border/30 text-xs font-mono text-gray-400 bg-black/60">
+        <p>© 2026 Krisztina Racz | Entwickelt mit Python, Flask & <span class="text-brand-pink">💖</span> Cyber-Girlie Energy</p>
+    </footer>
+
+    <script>
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    </script>
+</body>
+</html>
+
