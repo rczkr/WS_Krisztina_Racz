@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* --- CUSTOM FARBVARIABLEN --- */
+:root {
+    --brand-cyan: #00f2fe;
+    --brand-violet: #9d4edd;
+    --brand-pink: #f72585;
+    --brand-dark: #06060c;
+    --brand-card: #121225;
+    --brand-border: rgba(255, 255, 255, 0.1);
+    --text-muted: #94a3b8;
+}
+
+/* --- GRUNDLAYOUT & HINTERGRUND --- */
+body {
+    background-color: var(--brand-dark);
+    color: #e2e8f0;
+    font-family: 'Inter', sans-serif;
+    background-image:
+        radial-gradient(circle at 15% 20%, rgba(0, 242, 254, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 60%, rgba(247, 37, 133, 0.1) 0%, transparent 45%);
+    background-attachment: fixed;
+}
+
+/* --- GLASSMORPHISM CARDS --- */
+.glass-card {
+    background: rgba(18, 18, 37, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--brand-border);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-hover:hover {
+    transform: translateY(-4px);
+    border-color: rgba(247, 37, 133, 0.5);
+    box-shadow: 0 12px 40px -10px rgba(247, 37, 133, 0.3);
+}
+
+/* --- FARB-AKZENTE & BORDER-VARIANTE --- */
+.accent-pink { color: var(--brand-pink); }
+.accent-cyan { color: var(--brand-cyan); }
+.accent-violet { color: var(--brand-violet); }
+
+.border-accent-pink { border-left: 4px solid var(--brand-pink); }
+.border-accent-cyan { border-left: 4px solid var(--brand-cyan); }
+.border-accent-violet { border-left: 4px solid var(--brand-violet); }
+
+.highlight-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(247, 37, 133, 0.3);
+}
+
+/* --- TEXT-GLOW EFFEKTE --- */
+.glow-pink {
+    color: var(--brand-pink);
+    text-shadow: 0 0 12px rgba(247, 37, 133, 0.7);
+}
+
+.glow-cyan {
+    color: var(--brand-cyan);
+    text-shadow: 0 0 12px rgba(0, 242, 254, 0.7);
+}
+
+/* --- BUTTON STYLING (DRUCKEN / SPEICHERN) --- */
+.btn-download {
+    background: linear-gradient(90deg, var(--brand-pink) 0%, var(--brand-cyan) 100%);
+    color: #000000;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+}
+
+.btn-download:hover {
+    box-shadow: 0 0 20px rgba(247, 37, 133, 0.6);
+    transform: translateY(-2px);
+}
+
+/* --- UNTERSCHRIFT & ANIMATIONEN --- */
+.signature-img {
+    filter: invert(1) brightness(2) drop-shadow(0 0 6px rgba(247, 37, 133, 0.6));
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 15px rgba(0, 242, 254, 0.2); }
+    100% { box-shadow: 0 0 35px rgba(247, 37, 133, 0.5); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.animate-pulse-glow { animation: pulseGlow 3s infinite alternate; }
+.animate-float { animation: float 6s ease-in-out infinite; }
+
+/* --- DRUCK-STYLES (AUTOMATISCHER EXPORT) --- */
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 6mm 8mm;
+    }
+    html, body {
+        background: #ffffff !important;
+        background-image: none !important;
+        color: #0f172a !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        font-size: 9.5px !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    nav, footer, .btn-download {
+        display: none !important;
+    }
+
+    .glass-card {
+        background: #f8fafc !important;
+        border: 1px solid #cbd5e1 !important;
+        box-shadow: none !important;
+        padding: 10px !important;
+    }
+
+    .text-white { color: #0f172a !important; }
+    .text-gray-300, .text-gray-400 { color: #334155 !important; }
+    .glow-pink, .accent-pink { color: #d90429 !important; text-shadow: none !important; }
+    .glow-cyan, .accent-cyan { color: #0284c7 !important; text-shadow: none !important; }
+
+    .signature-img {
+        filter: none !important;
+    }
+
+    .glass-card, .relative {
+        break-inside: avoid !important;
+    }
+}
