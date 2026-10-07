@@ -5,11 +5,11 @@
 {% block content %}
 <div class="p-6 max-w-5xl mx-auto min-h-screen">
 
-    <!-- HEADER / PROFIL & KONTAKT -->
+    <!--header-->
     <div class="glass-card p-6 rounded-2xl border-accent-pink flex flex-col md:flex-row justify-between items-center gap-6 mb-6">
         <div class="flex items-center gap-5">
-            <div class="w-20 h-20 rounded-full border-2 border-cyan-400 overflow-hidden shadow-md flex-shrink-0">
-                <img src="{{ url_for('static', filename='images/profilbild.jpg') }}" alt="Krisztina Racz" class="w-full h-full object-cover">
+            <div class="w-40 h-40 rounded-full border-2 border-cyan-400 overflow-hidden shadow-md flex-shrink-0">
+                <img src="{{ url_for('static', filename='images/profilbild.jpg') }}" alt="Krisztina Racz" class="w-full h-full object-cover ">
             </div>
             <div>
                 <h1 class="text-2xl font-extrabold text-white tracking-wide">Krisztina <span class="glow-pink">Racz</span></h1>
@@ -17,31 +17,31 @@
             </div>
         </div>
 
-        <!-- KONTAKT-BOX & DRUCK-BUTTON -->
+        <!-- anschrift-->
         <div class="flex flex-col gap-3 border-t md:border-t-0 md:border-l border-gray-700/60 pt-4 md:pt-0 md:pl-6 w-full md:w-auto">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-xs font-mono text-gray-300">
                 <div><i class="fa-solid fa-location-dot accent-pink mr-2"></i>Holunderstraße 6, 72181 Starzach</div>
                 <div><i class="fa-solid fa-phone accent-cyan mr-2"></i>0155 60584389</div>
                 <div><i class="fa-solid fa-envelope accent-pink mr-2"></i>kristinaracz11@gmail.com</div>
-                <div><i class="fa-solid fa-globe accent-cyan mr-2"></i>Portfolio auf Anfrage / Render</div>
+                <div><i class="fa-solid fa-globe accent-cyan mr-2"></i>https://ws_krisztina_racz.com</div>
             </div>
 
-            <!-- BUTTON: ERSETZT RECHTSKLICK & DRUCKEN -->
+            <!-- pdf/druck-->
             <div class="pt-2">
                 <button onclick="window.print()" class="btn-download px-4 py-2 text-xs rounded-lg flex items-center justify-center gap-2 w-full sm:w-auto cursor-pointer">
-                    <i class="fa-solid fa-print"></i> Lebenslauf Drucken / Als PDF Speichern
+                    <i class="fa-solid fa-print"></i> Drucken / PDF
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- MAIN GRID -->
+    <!-- main grid -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-        <!-- LINKEN SPALTE -->
+        <!-- linke-seite-->
         <div class="space-y-6">
 
-            <!-- AUSBILDUNG -->
+            <!-- ausbildung -->
             <div class="glass-card p-5 rounded-2xl border-accent-cyan">
                 <h2 class="text-xs font-mono font-bold accent-cyan uppercase tracking-wider mb-4 flex items-center gap-2">
                     <i class="fa-solid fa-graduation-cap"></i> Ausbildung & Umschulung
@@ -65,7 +65,7 @@
                 </div>
             </div>
 
-            <!-- IT-KENNTNISSE -->
+            <!-- IT kenntnisse-->
             <div class="glass-card p-5 rounded-2xl border-accent-pink">
                 <h2 class="text-xs font-mono font-bold accent-pink uppercase tracking-wider mb-3 flex items-center gap-2">
                     <i class="fa-solid fa-code"></i> IT-Kenntnisse
@@ -90,7 +90,7 @@
                 </div>
             </div>
 
-            <!-- SPRACHEN -->
+            <!-- sprachen -->
             <div class="glass-card p-5 rounded-2xl border-accent-cyan">
                 <h2 class="text-xs font-mono font-bold accent-cyan uppercase tracking-wider mb-3 flex items-center gap-2">
                     <i class="fa-solid fa-language"></i> Sprachen
@@ -111,19 +111,19 @@
                 </div>
             </div>
 
-            <!-- HOBBYS -->
+            <!-- hobbys -->
             <div class="glass-card p-5 rounded-2xl border-accent-pink">
                 <h2 class="text-xs font-mono font-bold accent-pink uppercase tracking-wider mb-2 flex items-center gap-2">
                     <i class="fa-solid fa-heart"></i> Hobbys
                 </h2>
                 <p class="text-xs text-gray-300 leading-relaxed">
-                    Stand-up-Paddling • Wandern • Krafttraining • In der Küche experimentieren
+                    Stand-up-Paddling • Wandern • Krafttraining
                 </p>
             </div>
 
         </div>
 
-        <!-- RECHTE SPALTE -->
+        <!-- rechte-seite -->
         <div class="md:col-span-2 space-y-4">
 
             <div class="glass-card p-6 rounded-2xl border-accent-cyan">
@@ -217,13 +217,9 @@
                         <p class="text-gray-400 text-[11px] mb-1">Penny, Ungarn</p>
                         <p class="text-gray-300">• Kundenbetreuung und Abwicklung von Zahlungen</p>
                     </div>
-
                 </div>
             </div>
-
         </div>
-
     </div>
-
 </div>
 {% endblock %}

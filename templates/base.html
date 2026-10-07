@@ -26,8 +26,8 @@
             <!-- Desktop Navigation Links -->
             <div class="hidden md:flex space-x-6 text-sm font-medium items-center">
                 <a href="{{ url_for('home') }}" class="hover:text-[var(--brand-pink)] transition-colors">Über Mich</a>
-                <a href="{{ url_for('kopf_fit') }}" class="hover:text-[var(--brand-cyan)] transition-colors">Projekt: KopfFit</a>
-                <a href="{{ url_for('projekt_zwei') }}" class="hover:text-[var(--brand-violet)] transition-colors">JumpNova</a>
+                <a href="{{ url_for('kopf_fit') }}" class="hover:text-[var(--brand-cyan)] transition-colors">KopfFit</a>
+                <a href="{{ url_for('jumpnova') }}" class="hover:text-[var(--brand-violet)] transition-colors">JumpNova</a>
                 <a href="{{ url_for('warum_ihr') }}" class="text-[var(--brand-pink)] border border-pink-500/40 px-3 py-1 rounded-full bg-pink-500/10 hover:bg-[var(--brand-pink)] hover:text-white transition-all">Warum Ihr Team?</a>
             </div>
 
@@ -50,8 +50,8 @@
         <!-- Mobile Navigation Menu -->
         <div id="mobile-menu" class="hidden md:hidden pt-4 pb-2 border-t border-white/10 mt-3 flex flex-col gap-3 text-sm">
             <a href="{{ url_for('home') }}" class="mobile-link px-2 py-1 hover:text-[var(--brand-pink)]">Über Mich</a>
-            <a href="{{ url_for('kopf_fit') }}" class="mobile-link px-2 py-1 hover:text-[var(--brand-cyan)]">Projekt: KopfFit</a>
-            <a href="{{ url_for('projekt_zwei') }}" class="mobile-link px-2 py-1 hover:text-[var(--brand-violet)]">JumpNova</a>
+            <a href="{{ url_for('kopf_fit') }}" class="mobile-link px-2 py-1 hover:text-[var(--brand-cyan)]">KopfFit</a>
+            <a href="{{ url_for('jumpnova') }}" class="mobile-link px-2 py-1 hover:text-[var(--brand-violet)]">JumpNova</a>
             <a href="{{ url_for('warum_ihr') }}" class="mobile-link px-2 py-1 text-[var(--brand-pink)]">Warum Ihr Team?</a>
             <div class="flex flex-col gap-2 pt-2 border-t border-white/10">
                 <a href="{{ url_for('cv') }}" class="mobile-link px-2 py-1 text-[var(--brand-pink)] font-bold flex items-center gap-2"><i class="fa-solid fa-address-card"></i> Lebenslauf ansehen</a>
@@ -64,12 +64,14 @@
     <main class="min-h-screen pt-20">
         {% block content %}{% endblock %}
     </main>
-
-    <!-- Footer -->
-    <footer class="py-8 px-6 text-center border-t border-white/10 text-xs font-mono text-gray-400 bg-black/60">
-        <p>© 2026 Krisztina Racz | Entwickelt mit Python, Flask & <span class="text-[var(--brand-pink)]">💖</span> Cyber-Girlie Energy</p>
-    </footer>
-
+<!-- Footer -->
+<footer class="py-8 px-6 text-center border-t border-white/10 text-xs font-mono text-gray-400 bg-black/60">
+    <p>
+        © 2026 Krisztina Racz | Entwickelt mit Python & Flask |
+        <a href="{{ url_for('impressum') }}" class="hover:text-[var(--brand-cyan)] underline">Impressum</a> |
+        <a href="{{ url_for('datenschutz') }}" class="hover:text-[var(--brand-pink)] underline">Datenschutz</a>
+    </p>
+</footer>
     <script>
         const mobileBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');

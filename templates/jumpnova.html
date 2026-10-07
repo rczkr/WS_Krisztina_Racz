@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Projekt: JumpNova | Krisztina Racz Portfolio{% endblock %}
+
+{% block content %}
+<!--header-->
+<section class="py-16 px-6 max-w-5xl mx-auto">
+    <div class="text-center mb-12">
+        <h1 class="text-4xl font-extrabold text-white mt-4 mb-2">Projekt: <span class="text-brand-violet">JumpNova</span> 💥</h1>
+        <p class="text-gray-300 text-sm max-w-2xl mx-auto">Individuelles Workout-Erlebnis mit personalisiertem Sound, Custom-Timern und Video-Guides.</p>
+    </div>
+
+<!-- highlights-->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div class="glass-card p-6 rounded-2xl border-l-4 border-l-brand-violet glass-card-hover">
+            <div class="text-2xl text-brand-violet mb-2"><i class="fa-solid fa-sliders"></i></div>
+            <h3 class="text-lg font-bold text-white mb-1">Dual-Audio-Control</h3>
+            <p class="text-xs text-gray-300">Musik und Sprachspur unabhängig anpassen und voll im Flow bleiben.</p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl border-l-4 border-l-brand-pink glass-card-hover">
+            <div class="text-2xl text-brand-pink mb-2"><i class="fa-solid fa-stopwatch"></i></div>
+            <h3 class="text-lg font-bold text-white mb-1">Interaktive Lyrics</h3>
+            <p class="text-xs text-gray-300">Sprachlernen & Workout auf einen Schlag</p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl border-l-4 border-l-brand-cyan glass-card-hover">
+            <div class="text-2xl text-brand-cyan mb-2"><i class="fa-solid fa-filter"></i></div>
+            <h3 class="text-lg font-bold text-white mb-1">Custom-Filter</h3>
+            <p class="text-xs text-gray-300">Filtere nach Intensität, Dauer sowie Musikstil und passe jede Einheit individuell an dich an</p>
+        </div>
+    </div>
+<!--   video-->
+    <div class="glass-card p-6 rounded-2xl border border-brand-cyan/30 mb-12 text-center">
+        <h3 class="text-lg font-bold text-white mb-4"><i class="fa-solid fa-play text-brand-pink mr-2"></i>Präsentation & Demonstration</h3>
+        <div class="aspect-video max-w-3xl mx-auto rounded-xl overflow-hidden border border-brand-border">
+            <video class="w-full h-full object-cover" controls autoplay muted playsinline poster="{{ url_for('static', filename='images/kopffit_preview.jpg') }}">
+                <source src="{{ url_for('static', filename='videos/jumpnova_projekt_video.mp4') }}" type="video/mp4">
+                Ihr Browser unterstützt das Video-Tag leider nicht.
+            </video>
+        </div>
+    </div>
+
+</section>
+{% endblock %}
