@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+
+{% block title %}Lebenslauf - Berry{% endblock %}
+
+{% block content %}
+<div class="p-6 max-w-5xl mx-auto min-h-screen">
+
+    <!-- header -->
+    <div class="glass-card p-6 rounded-2xl border-accent-pink flex flex-col md:flex-row justify-between items-center gap-6 mb-6">
+        <div class="flex items-center gap-5">
+            <div class="w-40 h-40 rounded-full border-2 border-cyan-400 overflow-hidden shadow-md flex-shrink-0">
+                <img src="{{ url_for('static', filename='images/berry2.jpg') }}" alt="Berry"  class="relative w-56 h-56 rounded-full object-contain object-top scale-70 border-4 border-slate-950 shadow-2xl">
+            </div>
+            <div>
+                <h1 class="text-2xl font-extrabold text-white tracking-wide"><span class="glow-pink">Berry</span></h1>
+                <p class="glow-cyan font-mono text-xs mt-1">Feel-Good-Manager & Begleithund</p>
+            </div>
+        </div>
+
+        <!-- steckbrief -->
+        <div class="flex flex-col gap-3 border-t md:border-t-0 md:border-l border-gray-700/60 pt-4 md:pt-0 md:pl-6 w-full md:w-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-xs font-mono text-gray-300">
+                <div><i class="fa-solid fa-dog accent-pink mr-2"></i>Cocker Spaniel</div>
+                <div><i class="fa-solid fa-mars accent-cyan mr-2"></i>Männlich (kastriert)</div>
+                <div><i class="fa-solid fa-cake-candles accent-pink mr-2"></i>29.05.2021</div>
+                <div><i class="fa-solid fa-shield-cat accent-cyan mr-2"></i>Büro- & Begleithund seit 2021</div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- main grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- linke Seite -->
+        <div class="space-y-6">
+
+            <!-- spezialisierung -->
+            <div class="glass-card p-5 rounded-2xl border-accent-cyan">
+                <h2 class="text-xs font-mono font-bold accent-cyan uppercase tracking-wider mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-star"></i> Spezialisierung
+                </h2>
+                <div class="space-y-2 text-xs text-gray-300">
+                    <p>• Stressabbau & Team-Motivation</p>
+                    <p>• Wohlfühlatmosphäre am Arbeitsplatz</p>
+                    <p>• Erprobter Ruhepol bei kniffligem Debugging</p>
+                </div>
+            </div>
+
+            <!-- skills-->
+            <div class="glass-card p-5 rounded-2xl border-accent-pink">
+                <h2 class="text-xs font-mono font-bold accent-pink uppercase tracking-wider mb-3 flex items-center gap-2">
+                    <i class="fa-solid fa-paw"></i> Hard & Soft Skills
+                </h2>
+                <div class="space-y-3 text-xs">
+                    <div>
+                        <p class="text-gray-400 text-[10px] font-mono uppercase">Zuverlässigkeit</p>
+                        <p class="font-semibold text-white">100% Stubenrein</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-400 text-[10px] font-mono uppercase">Verhalten bei Calls & Unterricht</p>
+                        <p class="font-semibold text-white">Lautlos-Modus bei Calls, <br>Meetings & Vorlesungen</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-400 text-[10px] font-mono uppercase">Akku & Ausdauer</p>
+                        <p class="font-semibold text-white">Erst nach 5–6h Coding eine kurze Gassipause 🐾</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-400 text-[10px] font-mono uppercase">Sozialkompetenz</p>
+                        <p class="font-semibold text-white">Sehr verträglich mit Kollegen & Hunden</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-400 text-[10px] font-mono uppercase">Sicherheit & Nachweise</p>
+                        <p class="font-semibold text-white">Vollständig geimpft, gechipt & versichert</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- referenz-->
+            <div class="glass-card p-5 rounded-2xl border-accent-cyan">
+                <h2 class="text-xs font-mono font-bold accent-cyan uppercase tracking-wider mb-2 flex items-center gap-2">
+                    <i class="fa-solid fa-quote-left"></i> Referenzen
+                </h2>
+                <p class="text-xs text-gray-300 italic leading-relaxed">
+                    „Seit 2021 die verlässlichste Unterstützung im Arbeits- und Schulungsalltag – lernt leise mit, sorgt für gute Laune im Team, fordert erst nach 5–6 Stunden eine kleine Bewegungspause ein und schnarcht höchstens ganz leise bei trockener Theorie.“
+                </p>
+            </div>
+
+        </div>
+
+        <!--rechte seite-->
+        <div class="md:col-span-2 space-y-4">
+
+            <div class="glass-card p-6 rounded-2xl border-accent-cyan">
+                <h2 class="text-sm font-mono font-bold accent-cyan uppercase tracking-wider mb-6 flex items-center gap-2">
+                    <i class="fa-solid fa-briefcase"></i> Berufserfahrung & Büroeinsätze
+                </h2>
+
+                <div class="space-y-6 text-xs border-l border-gray-700/60 pl-4 ml-1">
+
+                    <div class="relative highlight-box p-3 rounded-xl">
+                        <div class="absolute -left-[21px] top-4 w-2.5 h-2.5 rounded-full bg-pink-500"></div>
+                        <div class="flex justify-between items-baseline flex-wrap gap-1">
+                            <h3 class="font-bold text-white text-sm">Azubi-Begleithund</h3>
+                            <span class="text-[10px] font-mono accent-pink font-bold">Seit 02/2026</span>
+                        </div>
+                        <p class="text-gray-400 text-[11px] mb-2">Umschulungszentrum (FIAE)</p>
+                        <ul class="text-gray-300 space-y-1">
+                            <li>• Tägliche Präsenz im Umschulungszentrum / Unterrichtsraum</li>
+                            <li>• Absolut ruhiges Liegeverhalten während mehrstündiger Vorlesungen & Coding-Sessions</li>
+                            <li>• Zertifizierter Ruhepol bei der Fehlersuche & Server-Problemen</li>
+                        </ul>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-cyan-400"></div>
+                        <div class="flex justify-between items-baseline flex-wrap gap-1">
+                            <h3 class="font-bold text-white text-sm">Homeoffice-Partner</h3>
+                            <span class="text-[10px] font-mono accent-cyan">08/2025 – 10/2025</span>
+                        </div>
+                        <p class="text-gray-400 text-[11px] mb-1">Gevekom GmbH (Homeoffice)</p>
+                        <p class="text-gray-300">• Ruhiger Begleiter im Homeoffice-Alltag bei Multiprojekten und Kundenbetreuung</p>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-gray-500"></div>
+                        <div class="flex justify-between items-baseline flex-wrap gap-1">
+                            <h3 class="font-bold text-white text-sm">Auszeit & Ausflugs-Begleiter</h3>
+                            <span class="text-[10px] font-mono text-gray-400">03/2025 – 08/2025</span>
+                        </div>
+                        <p class="text-gray-400 text-[11px] mb-1">Hartmann Reisen GmbH</p>
+                        <p class="text-gray-300">• Begleitung im Arbeitsalltag und kundenorientierten Umfeld</p>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-gray-500"></div>
+                        <div class="flex justify-between items-baseline flex-wrap gap-1">
+                            <h3 class="font-bold text-white text-sm">Stressberuhiger im Support</h3>
+                            <span class="text-[10px] font-mono text-gray-400">09/2024 – 02/2025</span>
+                        </div>
+                        <p class="text-gray-400 text-[11px] mb-1">Avedo GmbH (Homeoffice)</p>
+                        <p class="text-gray-300">• Zuverlässige Präsenz im Homeoffice während intensiver Kundenbetreuung</p>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-gray-500"></div>
+                        <div class="flex justify-between items-baseline flex-wrap gap-1">
+                            <h3 class="font-bold text-white text-sm">Chief Happiness Officer</h3>
+                            <span class="text-[10px] font-mono text-gray-400">07/2022 – 09/2024</span>
+                        </div>
+                        <p class="text-gray-400 text-[11px] mb-1">Walterservices GmbH (Homeoffice)</p>
+                        <p class="text-gray-300">• Treue Unterstützung bei der Produktionssteuerung & Pünktliche Erinnerung an Bildschirmpausen</p>
+                    </div>
+
+                    <div class="relative">
+                        <div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-gray-500"></div>
+                        <div class="flex justify-between items-baseline flex-wrap gap-1">
+                            <h3 class="font-bold text-white text-sm">Erste Büro- & Homeoffice-Einsätze</h3>
+                            <span class="text-[10px] font-mono text-gray-400">12/2021 – 07/2022</span>
+                        </div>
+                        <p class="text-gray-400 text-[11px] mb-1">Manpower GmbH (Homeoffice)</p>
+                        <p class="text-gray-300">• Souveränes & entspanntes Verhalten im Hintergrund während Telefonaten und Calls</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- gruss -->
+    <div class="mt-8 pt-4 border-t border-gray-700/60 flex justify-between items-end">
+        <div>
+            <p class="text-xs text-gray-400 mb-2">Mit freundlichen Grüßen & Wuff </p>
+            <p class="text-sm font-bold text-white tracking-wide glow-pink mt-1">🐾Berry</p>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

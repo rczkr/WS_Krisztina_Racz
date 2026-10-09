@@ -35,5 +35,9 @@ def impressum():
 def datenschutz():
     return render_template('datenschutz.html')
 
+@app.route('/berry')
+def berry():
+    return render_template('berry.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
