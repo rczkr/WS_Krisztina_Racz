@@ -1,7 +1,7 @@
    const typingTextElement = document.getElementById('typing-text');
     const roles = [
         'Angehende Fachinformatikerin',
-        'Anwendungsentwicklung (IHK)',
+        'Frontend- & Web-Entwicklerin',
         'Python & Flask Developerin',
         'Motivierte Problem-Löserin'
     ];

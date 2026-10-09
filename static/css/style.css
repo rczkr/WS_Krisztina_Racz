@@ -139,4 +139,8 @@ body {
     .glass-card, .relative {
         break-inside: avoid !important;
     }
+    /* --- Aktiver Navigationslink Glow --- */
+    .active-nav-link {
+    text-shadow: 0 0 10px currentColor;
+}
 }
