@@ -1,4 +1,5 @@
-# Developer Portfolio & Application Website – Krisztina Racz
+# Developer Portfolio & Application Website
+               Krisztina Racz
 
 Ein modernes, responsives Web-Portfolio und Bewerbungsprojekt, entwickelt im Rahmen der IHK-Umschulung zur **Fachinformatikerin für Anwendungsentwicklung**. 
 
